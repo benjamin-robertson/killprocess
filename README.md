@@ -1,5 +1,9 @@
 # killprocess
 
+Example
+
+bolt task run killprocess --targets 172.31.4.17 --user ec2-user processid=56400 signal=9
+
 Welcome to your new module. A short overview of the generated parts can be found
 in the [PDK documentation][1].
 
