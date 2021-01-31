@@ -28,8 +28,18 @@
 #
 
 # Set the varibles
-process=$PT_processID
+process=$PT_processid
 signal=$PT_signal
+
+
+ps -q $process
+if [ $? -ne 0 ]
+then
+    echo "Process $process does not exist"
+    exit 1
+else
+    echo "Process $process exits going to kill now"
+fi
 
 echo kill -$signal $process
 
@@ -37,7 +47,9 @@ echo kill -$signal $process
 
 if [ $? -ne 0 ]
 then
+    echo "failed to kill process, maybe you do not have the requried permissions"
     exit 1
 else
+    echo "Kill process successfully :)"
     exit 0
 fi

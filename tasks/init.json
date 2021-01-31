@@ -3,13 +3,13 @@
   "supports_noop": false,
   "description": "A short description of this task",
   "parameters": {
-    "processID": {
+    "processid": {
       "description": "process ID to kill",
       "type": "Integer"
     },
     "signal": {
       "description": "Kill signal to send",
-      "type": "Intger"
+      "type": "Integer"
     }
   }
 }
