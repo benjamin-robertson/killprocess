@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Puppet Task Name: killprocess
 #
@@ -26,3 +26,18 @@
 #   }
 # Learn more at: https://puppet.com/docs/bolt/0.x/writing_tasks.html#ariaid-title11
 #
+
+# Set the varibles
+process=$PT_processID
+signal=$PT_signal
+
+echo kill -$signal $process
+
+`kill -$signal $process`
+
+if [ $? -ne 0 ]
+then
+    exit 1
+else
+    exit 0
+fi
