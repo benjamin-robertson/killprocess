@@ -38,7 +38,7 @@ then
     echo "Process $process does not exist"
     exit 1
 else
-    echo "Process $process exits going to kill now"
+    echo "Process $process exist going to kill now"
 fi
 
 echo kill -$signal $process
